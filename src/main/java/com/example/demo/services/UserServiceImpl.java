@@ -2,9 +2,6 @@ package com.example.demo.services;
 
 import com.example.demo.domains.User;
 import com.example.demo.repositories.UserRepository;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

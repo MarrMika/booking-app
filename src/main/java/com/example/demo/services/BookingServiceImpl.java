@@ -2,14 +2,10 @@ package com.example.demo.services;
 
 import com.example.demo.domains.Booking;
 import com.example.demo.repositories.BookingRepository;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 
 
 @Service
@@ -23,7 +19,7 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public Booking findById(String  id) {
+    public Booking findById(String id) {
 
         return bookingRepository.getOne(id);
     }
