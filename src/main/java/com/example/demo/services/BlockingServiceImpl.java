@@ -1,4 +1,53 @@
 package com.example.demo.services;
 
-public class BlockingServiceImpl {
+import com.example.demo.domains.Blocking;
+import com.example.demo.domains.User;
+import com.example.demo.repositories.BlockingRepository;
+import jdk.nashorn.internal.ir.Block;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+
+
+@Service
+public class BlockingServiceImpl implements BlockingService {
+
+    private BlockingRepository blockingRepository;
+
+    @Autowired
+    public BlockingServiceImpl(BlockingRepository blockingRepository) {
+        this.blockingRepository = blockingRepository;
+    }
+
+    @Override
+    public Blocking findById(String  id) {
+
+        return blockingRepository.getOne(id);
+    }
+
+    @Override
+    public List<Blocking> findAll() {
+
+        return blockingRepository.findAll();
+    }
+
+    @Override
+    public void deleteById(String  id) {
+
+        blockingRepository.deleteById(id);
+
+    }
+
+    @Override
+    public Blocking update(Blocking blocking) {
+
+        return blockingRepository.save(blocking);
+    }
+
+
 }
