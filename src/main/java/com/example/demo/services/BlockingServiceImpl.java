@@ -1,17 +1,11 @@
 package com.example.demo.services;
 
 import com.example.demo.domains.Blocking;
-import com.example.demo.domains.User;
 import com.example.demo.repositories.BlockingRepository;
-import jdk.nashorn.internal.ir.Block;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 
 
 @Service
@@ -25,7 +19,7 @@ public class BlockingServiceImpl implements BlockingService {
     }
 
     @Override
-    public Blocking findById(String  id) {
+    public Blocking findById(String id) {
 
         return blockingRepository.getOne(id);
     }
@@ -37,7 +31,7 @@ public class BlockingServiceImpl implements BlockingService {
     }
 
     @Override
-    public void deleteById(String  id) {
+    public void deleteById(String id) {
 
         blockingRepository.deleteById(id);
 
